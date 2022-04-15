@@ -30,12 +30,12 @@ Tool by Le Cuong Piano
 Version 3.7.1 (2022/3/24)
                               C0d3d by L330n123
 ┌────────────────────────────────────────────────────────
-│        Tos: Don't attack .gov website                  │
+│      Tos: Đừng hack .gov. Địa điểm                     │
 ├────────────────────────────────────────────            │
-│                 New stuff:                             │
-│          [+] Added Http Proxy Support                  │
-│          [+] Optimization DD/ATTACK                    │
-│          [+] Changed Varible Name CUONG                │
+│                 Công cụ mới:                           │
+│          [+] Đã thêm hỗ trợ proxy Http                 │
+│          [+] Tối ưu hóa DD / ATTACK                    │
+│          [+] Đã thay đổi tên biến thể                  │
 ├─────────────────────────────────────────────           │
 │ Link: https://github.com/le-cuong-hacker1111/DD-attck  │
 └─────────────────────────────────────────────┘───────────''')
