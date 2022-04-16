@@ -695,12 +695,14 @@ def main():
 		th.start()
 	else:'''
 	event = threading.Event()
-	print("> Building threads...")
+	print("> Building threadsd
+	      d...")
 	build_threads(mode,thread_num,event,proxy_type)
 	event.clear()
 	#input("Press Enter to continue.")
 	event.set()
-	print("> Flooding...")
+	print("> Floodingd
+	      d...")
 	time.sleep(period)
 
 if __name__ == "__main__":
