@@ -606,7 +606,7 @@ def main():
 	proxy_type = 5
 	period = 60
 	help = False
-	print("> Mode: [dd/post/head]")#slow]")
+	print("> Mode: [cc/post/head]")#slow]")
 	for n,args in enumerate(sys.argv):
 		if args == "-help" or args =="-h":
 			help =True
@@ -614,7 +614,7 @@ def main():
 			ParseUrl(sys.argv[n+1])
 		if args=="-m" or args=="-mode":
 			mode = sys.argv[n+1]
-			if mode not in ["dd","post","head"]:#,"slow"]:
+			if mode not in ["cc","post","head"]:#,"slow"]:
 				print("> -m/-mode argument error")
 				return
 		if args =="-v":
