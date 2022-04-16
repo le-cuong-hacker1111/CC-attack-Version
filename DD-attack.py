@@ -606,7 +606,7 @@ def main():
 	proxy_type = 5
 	period = 60
 	help = False
-	print("> Mode: [cc/post/head]")#slow]")
+	print("> Mode: [dd/post/head]")#slow]")
 	for n,args in enumerate(sys.argv):
 		if args == "-help" or args =="-h":
 			help =True
@@ -614,7 +614,7 @@ def main():
 			ParseUrl(sys.argv[n+1])
 		if args=="-m" or args=="-mode":
 			mode = sys.argv[n+1]
-			if mode not in ["cc","post","head"]:#,"slow"]:
+			if mode not in ["dd","post","head"]:#,"slow"]:
 				print("> -m/-mode argument error")
 				return
 		if args =="-v":
@@ -691,12 +691,21 @@ def main():
 		th.start()
 	else:'''
 	event = threading.Event()
-	print("> Building threads...")
+	print("> Lê Cường đang kiến ​​tạo​​đang xây dựng....")
 	build_threads(mode,thread_num,event,proxy_type)
 	event.clear()
 	#input("Press Enter to continue.")
 	event.set()
-	print("> Flooding...")
+	print("> Attacking the flood....
+	                ____________      _____ 
+                  |  _  \  _  \    /  ___|
+  __ _ _ __   __ _| | | | | | |___ \ `--. 
+ / _` | '_ \ / _` | | | | | | / _ \ `--. \
+| (_| | | | | (_| | |/ /| |/ / (_) /\__/ /
+ \__,_|_| |_|\__, |___/ |___/ \___/\____/ 
+              __/ |                       
+             |___/                        
+")
 	time.sleep(period)
 
 if __name__ == "__main__":
