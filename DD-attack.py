@@ -35,7 +35,7 @@ Version 3.7.1 (2022/3/24)
 │          [+] Optimization                   │
 │          [+] Changed Varible Name           │
 ├─────────────────────────────────────────────┤
-│ Link: https://github.com/Leeon123/CC-attack │
+│Link:https://github.com/le-cuong-hacker1111/DD-attack
 └─────────────────────────────────────────────┘''')
 
 acceptall = [
@@ -695,12 +695,12 @@ def main():
 		th.start()
 	else:'''
 	event = threading.Event()
-	print("> Building threads...")
+	print("> Đang Kiến Tạo...")
 	build_threads(mode,thread_num,event,proxy_type)
 	event.clear()
 	#input("Press Enter to continue.")
 	event.set()
-	print("> Flooding...")
+	print("> Đang tấn công lũ lụt...")
 	time.sleep(period)
 
 if __name__ == "__main__":
