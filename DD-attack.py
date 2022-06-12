@@ -35,7 +35,7 @@ Version 3.7.1 (2022/3/24)
 │          [+] Optimization                   │
 │          [+] Changed Varible Name           │
 ├─────────────────────────────────────────────┤
-│Link:https://github.com/le-cuong-hacker1111/DD-attack
+│Link:https://zalo.me/0765698140              │
 └─────────────────────────────────────────────┘''')
 
 acceptall = [
@@ -201,7 +201,7 @@ def ParseUrl(original_url):
 		url = original_url[8:]
 		protocol = "https"
 	else:
-		print("> That looks like not a correct url.")
+		print("> Có vẻ như đó không phải là một url chính xác.")
 		exit()
 	#http(s)://www.example.com:1337/xxx ==> www.example.com:1337/xxx
 	#print(url) #for debug
@@ -224,7 +224,7 @@ def InputOption(question,options,default):
 		if ans == "":
 			ans = default
 		elif ans not in options:
-			print("> Please enter the correct option")
+			print("> Vui lòng nhập tùy chọn chính xác")
 			ans = ""
 			continue
 	return ans
@@ -465,7 +465,7 @@ def check_socks(ms):#Coded by Leeon123
 	print("> They are saved in "+out_file)
 			
 def check_list(socks_file):
-	print("> Checking list")
+	print("> ĐANG kiểm tra danh sách PROXY")
 	temp = open(socks_file).readlines()
 	temp_list = []
 	for i in temp:
@@ -575,22 +575,22 @@ def DownloadProxies(proxy_ver):
 	print("> Have already downloaded proxies list as "+out_file)
 
 def PrintHelp():
-	print('''===============  CC-attack help list  ===============
-   -h/help   | showing this message
-   -url      | set target url
-   -m/mode   | set program mode
-   -data     | set post data path (only works on post mode)
-             | (Example: -data data.json)
-   -cookies  | set cookies (Example: 'id:xxx;ua:xxx')
-   -v        | set proxy type (4/5/http, default:5)
-   -t        | set threads number (default:800)
-   -f        | set proxies file (default:proxy.txt)
-   -b        | enable/disable brute mode
-             | Enable=1 Disable=0  (default:0)
-   -s        | set attack time(default:60)
-   -down     | download proxies
-   -check    | check proxies
-=====================================================''')
+	print('''=============== Danh sách trợ giúp tấn công CC ===============
+   -h / trợ giúp | hiển thị tin nhắn này
+   -url | đặt url mục tiêu
+   -m / chế độ | đặt chế độ chương trình
+   -data | đặt đường dẫn dữ liệu bài đăng (chỉ hoạt động ở chế độ bài đăng)
+             | (Ví dụ: -data data.json)
+   -các tân binh | đặt cookie (Ví dụ: 'id: xxx; ua: xxx')
+   -v | đặt loại proxy (4/5 / http, mặc định: 5)
+   -t | đặt số chủ đề (mặc định: 800)
+   -f | đặt tệp proxy (mặc định: proxy.txt)
+   -b | bật / tắt chế độ vũ phu
+             | Bật = 1 Tắt = 0 (mặc định: 0)
+   -s | đặt thời gian tấn công (mặc định: 60)
+   -tuyệt vời | tải xuống proxy
+   -kiểm tra | kiểm tra proxy
+================================================== ===''')
 
 
 def main():
@@ -619,7 +619,7 @@ def main():
 		if args=="-m" or args=="-mode":
 			mode = sys.argv[n+1]
 			if mode not in ["cc","post","head"]:#,"slow"]:
-				print("> -m/-mode argument error")
+				print("> -m / -mode đối số lỗi")
 				return
 		if args =="-v":
 			proxy_ver = sys.argv[n+1]
@@ -630,7 +630,7 @@ def main():
 			elif proxy_ver == "http":
 				proxy_type = 0
 			elif proxy_ver not in ["4","5","http"]:
-				print("> -v argument error (only 4/5/http)")
+				print("> -v lỗi đối số (chỉ 4/5 / http)")
 				return
 		if args == "-b":
 			if sys.argv[n+1] == "1":
@@ -638,13 +638,13 @@ def main():
 			elif sys.argv[n+1] == "0":
 				brute = False
 			else:
-				print("> -b argument error")
+				print("> -b lỗi đối số")
 				return
 		if args == "-t":
 			try:
 				thread_num = int(sys.argv[n+1])
 			except:
-				print("> -t must be integer")
+				print("> -t phải là số nguyên")
 				return
 		if args == "-cookies":
 			cookies = sys.argv[n+1]
@@ -661,22 +661,22 @@ def main():
 			try:
 				period = int(sys.argv[n+1])
 			except:
-				print("> -s must be integer")
+				print("> -s phải là số nguyên")
 				return
 
 	if download_socks:
 		DownloadProxies(proxy_ver)
 
 	if os.path.exists(out_file)!=True:
-		print("Proxies file not found")
+		print("ĐÉO TÌM THẤY FILE PROXY")
 		return
 	proxies = open(out_file).readlines()	
 	check_list(out_file)
 	proxies = open(out_file).readlines()	
 	if len(proxies) == 0:
-		print("> There are no more proxies. Please download a new proxies list.")
+		print("> Không còn proxy nào nữa. Vui lòng tải xuống danh sách proxy mới.")
 		return
-	print ("> Number Of Proxies: %d" %(len(proxies)))
+	print ("> Số lượng proxy: %d" %(len(proxies)))
 	if check_proxies:
 		check_socks(3)
 
@@ -686,7 +686,7 @@ def main():
 		PrintHelp()
 
 	if target == "":
-		print("> There is no target. End of process ")
+		print("> Không có mục tiêu. Kết thúc quá trình ")
 		return
 	'''
 	if mode == "slow":
